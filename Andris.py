@@ -15,7 +15,7 @@ GPIO.setup(red, GPIO.OUT)
 GPIO.setup(green, GPIO.OUT)
 GPIO.setup(blue, GPIO.OUT)
 
- Blink some leds
+#Blink some leds
 while True:
      GPIO.output(red, False)
      sleep(1)  # Sleep for 1 second
