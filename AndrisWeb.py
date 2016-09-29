@@ -41,7 +41,7 @@ def light_app(env, start_response):
         Andris.cleanLed()
         Andris.greenOn()
 	Andris.blueOn()
-        return "<!DOCTYPE html><html><head><title>\"Lights\"</title></head><body><a title=\"White\" href=\"/white\">On</a></body></html>"
+        return "<!DOCTYPE html><html><head><title>\"Lights\"</title></head><body><a title=\"White\" href=\"/white\">White</a></body></html>"
 
     elif env["PATH_INFO"] == "/white":
         print("user asked for /white")
