@@ -15,33 +15,33 @@ def light_app(env, start_response):
         print("user asked for /red")
         Andris.cleanLed()
         Andris.redOn()
-        return "<!DOCTYPE html><html><head><title>\"Lights\"</title></head><body><a title=\"off\" href=\"/off\">Off</a></body></html>"          
+        return "<!DOCTYPE html><html><head><title>\"Lights\"</title></head><body><a title=\"Green\" href=\"/green\">Off</a></body></html>"          
 
     elif env["PATH_INFO"] == "/green":
         print("user asked for /green")
         Andris.cleanLed()
         Andris.greenOn()
-        return "<!DOCTYPE html><html><head><title>\"Lights\"</title></head><body><a title=\"On\" href=\"/on\">On</a></body></html>"          
+        return "<!DOCTYPE html><html><head><title>\"Lights\"</title></head><body><a title=\"Blue\" href=\"/blue\">On</a></body></html>"          
 
     elif env["PATH_INFO"] == "/blue":
         print("user asked for /blue")
         Andris.cleanLed()
         Andris.blueOn()
-        return "<!DOCTYPE html><html><head><title>\"Lights\"</title></head><body><a title=\"On\" href=\"/on\">On</a></body></html>" 
+        return "<!DOCTYPE html><html><head><title>\"Lights\"</title></head><body><a title=\"Orange\" href=\"/orange\">On</a></body></html>" 
 
     elif env["PATH_INFO"] == "/orange":
         print("user asked for /orange")
         Andris.cleanLed()
         Andris.greenOn()
 	Andris.redOn()
-        return "<!DOCTYPE html><html><head><title>\"Lights\"</title></head><body><a title=\"On\" href=\"/on\">On</a></body></html>"
+        return "<!DOCTYPE html><html><head><title>\"Lights\"</title></head><body><a title=\"Aqua\" href=\"/aqua\">On</a></body></html>"
 
     elif env["PATH_INFO"] == "/aqua":
         print("user asked for /aqua")
         Andris.cleanLed()
         Andris.greenOn()
 	Andris.blueOn()
-        return "<!DOCTYPE html><html><head><title>\"Lights\"</title></head><body><a title=\"On\" href=\"/on\">On</a></body></html>"
+        return "<!DOCTYPE html><html><head><title>\"Lights\"</title></head><body><a title=\"White\" href=\"/white\">On</a></body></html>"
 
     elif env["PATH_INFO"] == "/white":
         print("user asked for /white")
@@ -49,11 +49,12 @@ def light_app(env, start_response):
         Andris.greenOn()
 	Andris.redOn()
 	Andris.blueOn()
-        return "<!DOCTYPE html><html><head><title>\"Lights\"</title></head><body><a title=\"On\" href=\"/on\">On</a></body></html>"  
+        return "<!DOCTYPE html><html><head><title>\"Lights\"</title></head><body><a title=\"Off\" href=\"/off\">On</a></body></html>"  
 
     else:
         print("user asked for something else")
-        return "<!DOCTYPE html><html><head><title>\"Lights\"</title></head><body><a title=\"On\" href=\"/on\">On</a></body></html>"          
+	Andris.cleanLed()
+        return "<!DOCTYPE html><html><head><title>\"Lights\"</title></head><body><a title=\"Red\" href=\"/red\">On</a></body></html>"          
 
 # Create a small python server
 httpd = make_server("", 8001, light_app)
